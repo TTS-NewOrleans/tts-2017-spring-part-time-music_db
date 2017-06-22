@@ -1,14 +1,18 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+    <p>
+      <strong>Name:</strong>
+      <%= @song.name %>
+    </p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @song.name %>
-</p>
+    <p>
+      <strong>Artist:</strong>
+      <%= @song.artist.name %>
+    </p>
 
-<p>
-  <strong>Artist:</strong>
-  <%= @song.artist %>
-</p>
+    <%= link_to 'Edit', edit_song_path(@song), class: 'btn btn-default' %>
+    <%= link_to 'Back', songs_path, class: 'btn btn-default' %>
+  </div>
+</div>
 
-<%= link_to 'Edit', edit_song_path(@song) %> |
-<%= link_to 'Back', songs_path %>
