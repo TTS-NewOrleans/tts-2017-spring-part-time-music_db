@@ -6,7 +6,8 @@ class Song < ApplicationRecord
 
   # Artist Id and Artist both have to be there.
   validates :artist_id, :artist, presence: true
-  # validates :artist, presence: true
+
+  validates_uniqueness_of :name, scope: :artist_id
 end
 
 # == Schema Information
